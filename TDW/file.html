@@ -1,0 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['authenticated'])) {
+  header('Location: login.html');
+  exit; 
+}
+?>
+<html>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+File: <input type="file" name="filename" />
+<input type="submit" value="Upload" />
+</form>
+</html>
